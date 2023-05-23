@@ -1,5 +1,7 @@
 package com.leisure.miniuav;
 
+import com.leisure.miniuav.tab.ModTab;
+import com.leisure.miniuav.utils.Reference;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -13,11 +15,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(MiniUav.MOD_ID)
+@Mod(Reference.MOD_ID)
 public class MiniUav
 {
-    public static final String MOD_ID = "miniuav"; //修改为你的模组名称
     private static final Logger LOGGER = LogUtils.getLogger();
+
 
     public MiniUav()
     {
@@ -25,10 +27,17 @@ public class MiniUav
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::setup);
 
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(ModTab::registerTabs);
+    }
+
+    private void setup(final FMLCommonSetupEvent event)
+    {
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -39,7 +48,7 @@ public class MiniUav
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModEvents
     {
         @SubscribeEvent
