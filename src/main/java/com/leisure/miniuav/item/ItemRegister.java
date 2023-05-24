@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -34,5 +35,9 @@ public class ItemRegister {
     //触发事件示例 传送器 耐久度durability
     public static final RegistryObject<Item> TELEPORT_STAFF = ITEMS.register("teleport_staff",
             () -> new TeleportStaff(new Item.Properties().durability(50)));
+
+    public static void register(IEventBus eventBus){
+        ITEMS.register(eventBus);
+    }
 
 }
