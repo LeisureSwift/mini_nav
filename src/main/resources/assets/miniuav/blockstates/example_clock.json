@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "miniuav:block/example_block"
+    }
+  }
+}

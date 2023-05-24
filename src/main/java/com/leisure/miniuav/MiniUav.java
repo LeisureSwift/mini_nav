@@ -1,5 +1,7 @@
 package com.leisure.miniuav;
 
+import com.leisure.miniuav.item.ItemRegister;
+import com.leisure.miniuav.block.BlockRegister;
 import com.leisure.miniuav.tab.ModTab;
 import com.leisure.miniuav.utils.Reference;
 import com.mojang.logging.LogUtils;
@@ -29,10 +31,13 @@ public class MiniUav
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setup);
 
+        ItemRegister.ITEMS.register(modEventBus);
+        BlockRegister.BLOCKS.register(modEventBus);
+
+        modEventBus.addListener(ModTab::registerTabs);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(ModTab::registerTabs);
     }
 
     private void setup(final FMLCommonSetupEvent event)

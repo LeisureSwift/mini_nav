@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "miniuav:example_block",
+    "miniuav:rock"
+  ]
+}

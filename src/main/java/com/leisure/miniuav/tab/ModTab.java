@@ -11,7 +11,7 @@ public class ModTab {
     public static CreativeModeTab TEST_TAB;
 
     @SubscribeEvent
-    public static void registerTabs(CreativeModeTabEvent.Register event){
-        TEST_TAB  =event.registerCreativeModeTab(new ResourceLocation(Reference.MOD_ID, "uav_tab"), builder -> new TestTab().output(builder));
+    public static void registerTabs(CreativeModeTabEvent.Register event) {
+        TEST_TAB = event.registerCreativeModeTab(new ResourceLocation(Reference.MOD_ID, "uav_tab"), builder -> new TestTab().output(builder));
     }
 }
