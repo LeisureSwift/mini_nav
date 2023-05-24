@@ -4,6 +4,8 @@ import com.leisure.miniuav.item.ItemRegister;
 import com.leisure.miniuav.block.BlockRegister;
 import com.leisure.miniuav.tab.ModTab;
 import com.leisure.miniuav.utils.Reference;
+import com.leisure.miniuav.world.feature.ModConfiguredFeatures;
+import com.leisure.miniuav.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,6 +38,9 @@ public class MiniUav
         BlockRegister.BLOCKS.register(modEventBus);
 
         modEventBus.addListener(ModTab::registerTabs);
+
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         //动画效果初始化
         GeckoLib.initialize();
