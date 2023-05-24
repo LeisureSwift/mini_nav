@@ -24,7 +24,7 @@ public class ItemRegister {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(2).build())));
 
     //食用效果示例 effect
-    public static final RegistryObject<Item> EFFECTIVE_FRUIT = ITEMS.register("effective fruit",
+    public static final RegistryObject<Item> EFFECTIVE_FRUIT = ITEMS.register("effective_fruit",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0), 0.5F).build())));
 
     //燃料示例

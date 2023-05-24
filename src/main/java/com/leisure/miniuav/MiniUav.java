@@ -17,7 +17,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
-import software.bernie.geckolib3.GeckoLib;
+
+//import software.bernie.geckolib.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Reference.MOD_ID)
@@ -39,11 +40,11 @@ public class MiniUav
 
         modEventBus.addListener(ModTab::registerTabs);
 
-        ModConfiguredFeatures.register(modEventBus);
-        ModPlacedFeatures.register(modEventBus);
+//        ModConfiguredFeatures.register(modEventBus);
+//        ModPlacedFeatures.register(modEventBus);
 
         //动画效果初始化
-        GeckoLib.initialize();
+//        GeckoLib.initialize();
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }

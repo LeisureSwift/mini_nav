@@ -13,8 +13,8 @@ public class TestTab {
                 .icon(() -> new ItemStack(ItemRegister.LEI.get()))
                 .displayItems((featureFlags, output, hasOp) -> {
                     output.accept(ItemRegister.LEI.get());
-                    output.accept(BlockRegister.ROCK_BLOCK.get());
-                    output.accept(BlockRegister.EXAMPLE_BLOCK.get());
+//                    output.accept(BlockRegister.ROCK_BLOCK.get());
+//                    output.accept(BlockRegister.EXAMPLE_BLOCK.get());
                 }).build();
     }
 }
