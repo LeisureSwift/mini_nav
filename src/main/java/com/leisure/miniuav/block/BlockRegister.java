@@ -25,9 +25,16 @@ public class BlockRegister {
     public static final RegistryObject<Block> ROCK_BLOCK = registerBlock("rock",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
 
+    //strength    影响破坏时间和抵抗爆炸的能力
+    //sound       交互音效
+    //requiresCorrectToolForDrops  是否需要指定工具开采才能生成战利品
+    //lightLevel  发光能力 [1,16]
+    //friction    摩檫力 如冰
+    //speedFactor ？ 如灵魂沙
+    //jumpFactor  跳跃系数 如蜂蜜
     public static final RegistryObject<Block> EXAMPLE_BLOCK = registerBlock("example_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).strength(5f, 6f)
-                    .sound(SoundType.METAL).requiresCorrectToolForDrops()));
+                    .sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel((state) -> 15)));
 
     //普通矿石，UniformInt.of(a,b)意思是该矿石挖掘后奖励多少经验，范围在[a,b]
     public static final RegistryObject<Block> FANTOM_ORE = registerBlock("fantom_ore",

@@ -1,4 +1,4 @@
-package com.leisure.miniuav.entity;
+package com.leisure.miniuav.entity.item;
 
 import com.leisure.miniuav.utils.KeyboardHelper;
 import net.minecraft.core.BlockPos;
@@ -24,7 +24,7 @@ public class TeleportStaff extends Item {
     public TeleportStaff(Properties properties) {
         super(properties);
     }
-    //右键单击事件
+    //重写右键单击事件
     //示例写的是手持该物品右击 玩家向前闪现
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
@@ -49,7 +49,7 @@ public class TeleportStaff extends Item {
     }
 
     /**
-     * 鼠标悬置于该物品上时触发
+     * 鼠标悬置事件
      * 示例为当鼠标悬置且摁住shift时显示提示信息
      * @param stack
      * @param worldIn
