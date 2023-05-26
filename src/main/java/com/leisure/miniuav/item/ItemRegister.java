@@ -66,9 +66,6 @@ public class ItemRegister {
             () -> new HoeItem(ModItemTier.PINK, 0, -1.0F, new Item.Properties()));
 
     //注册使用自定义盔甲
-    //第二个参数 附加伤害
-    //第三个参数 附加攻击速度 加上默认4 可能为负数实际取绝对值
-    //可以自定义工具类
     public static final RegistryObject<Item> PINK_HELMET = ITEMS.register("pink_helmet",
             () -> new ArmorItem(ModArmorMaterial.PINK, EquipmentSlot.HEAD, new Item.Properties()));
 
