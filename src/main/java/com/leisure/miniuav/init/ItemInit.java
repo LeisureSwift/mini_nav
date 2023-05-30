@@ -1,5 +1,6 @@
 package com.leisure.miniuav.init;
 
+import com.leisure.miniuav.entity.item.ExplosiveArrowItem;
 import com.leisure.miniuav.entity.item.FuelItem;
 import com.leisure.miniuav.entity.item.TeleportStaff;
 import com.leisure.miniuav.utils.ModArmorMaterial;
@@ -77,6 +78,10 @@ public class ItemInit {
 
     public static final RegistryObject<Item> PINK_BOOTS = ITEMS.register("pink_boots",
             () -> new ArmorItem(ModArmorMaterial.PINK, EquipmentSlot.FEET, new Item.Properties()));
+
+    //注册自定义爆炸箭
+    public static final RegistryObject<Item> EXPLOSIVE_ARROW = ITEMS.register("explosive_arrow",
+            () -> new ExplosiveArrowItem(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

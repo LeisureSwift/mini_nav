@@ -1,6 +1,6 @@
 package com.leisure.miniuav.init;
 
-import com.leisure.miniuav.tile.MobSlayerTile;
+import com.leisure.miniuav.entity.tile.MobSlayerTile;
 import com.leisure.miniuav.utils.Reference;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;

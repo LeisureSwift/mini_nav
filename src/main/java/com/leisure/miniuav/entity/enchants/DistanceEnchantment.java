@@ -1,4 +1,4 @@
-package com.leisure.miniuav.enchants;
+package com.leisure.miniuav.entity.enchants;
 
 import com.leisure.miniuav.init.ItemInit;
 import net.minecraft.world.entity.EquipmentSlot;

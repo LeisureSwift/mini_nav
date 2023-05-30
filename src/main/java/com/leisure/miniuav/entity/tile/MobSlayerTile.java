@@ -1,10 +1,8 @@
-package com.leisure.miniuav.tile;
+package com.leisure.miniuav.entity.tile;
 
 import com.leisure.miniuav.init.TileEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;

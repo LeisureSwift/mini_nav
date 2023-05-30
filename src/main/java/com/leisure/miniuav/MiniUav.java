@@ -1,10 +1,7 @@
 package com.leisure.miniuav;
 
 import com.leisure.miniuav.events.AnvilHandler;
-import com.leisure.miniuav.init.EnchantmentInit;
-import com.leisure.miniuav.init.ItemInit;
-import com.leisure.miniuav.init.BlockInit;
-import com.leisure.miniuav.init.TileEntityInit;
+import com.leisure.miniuav.init.*;
 import com.leisure.miniuav.tab.ModTab;
 import com.leisure.miniuav.utils.Reference;
 import com.mojang.logging.LogUtils;
@@ -40,6 +37,7 @@ public class MiniUav {
 
         ItemInit.ITEMS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
+        EntityInit.ENTITY_TYPES.register(modEventBus);
         TileEntityInit.TILE_ENTITY_TYPES.register(modEventBus);
         EnchantmentInit.ENCHANTMENTS.register(modEventBus);
 

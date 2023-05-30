@@ -1,5 +1,7 @@
 package com.leisure.miniuav.entity.item;
 
+import com.leisure.miniuav.entity.projectile.ExplosiveArrowEntity;
+import com.leisure.miniuav.init.EntityInit;
 import com.leisure.miniuav.utils.KeyboardHelper;
 import com.leisure.miniuav.init.ItemInit;
 import net.minecraft.core.BlockPos;
@@ -47,6 +49,13 @@ public class TeleportStaff extends Item {
         ItemStack stack = player.getItemInHand(hand);
         stack.setDamageValue(stack.getDamageValue() + 1);
         if (stack.getDamageValue() >= stack.getMaxDamage()) stack.setCount(0);
+
+        if (!player.level.isClientSide()){
+            ExplosiveArrowEntity arrow = new ExplosiveArrowEntity(EntityInit.EXPLOSIVE_ARROW.get(), player, player.level);
+            arrow.setDeltaMovement(0, 1, 0); // directly up
+            player.level.addFreshEntity(arrow);
+        }
+
         return super.use(world, player, hand);
     }
 

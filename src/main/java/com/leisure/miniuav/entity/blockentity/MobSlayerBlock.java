@@ -1,7 +1,7 @@
 package com.leisure.miniuav.entity.blockentity;
 
 import com.leisure.miniuav.init.TileEntityInit;
-import com.leisure.miniuav.tile.MobSlayerTile;
+import com.leisure.miniuav.entity.tile.MobSlayerTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.EntityBlock;
