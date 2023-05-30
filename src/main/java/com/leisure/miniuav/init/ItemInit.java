@@ -1,4 +1,4 @@
-package com.leisure.miniuav.item;
+package com.leisure.miniuav.init;
 
 import com.leisure.miniuav.entity.item.FuelItem;
 import com.leisure.miniuav.entity.item.TeleportStaff;
@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 
-public class ItemRegister {
+public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
 
     //我们的第一个物品
@@ -54,7 +54,7 @@ public class ItemRegister {
             () -> new SwordItem(ModItemTier.PINK, 3, -2.4F, new Item.Properties()));
 
     public static final RegistryObject<Item> PINK_PICKAXE = ITEMS.register("pink_pickaxe",
-            () -> new PickaxeItem(ModItemTier.PINK,1, -1.0F, new Item.Properties()));
+            () -> new PickaxeItem(ModItemTier.PINK, 1, -1.0F, new Item.Properties()));
 
     public static final RegistryObject<Item> PINK_AXE = ITEMS.register("pink_axe",
             () -> new AxeItem(ModItemTier.PINK, 6, -3.4F, new Item.Properties()));
@@ -78,7 +78,7 @@ public class ItemRegister {
     public static final RegistryObject<Item> PINK_BOOTS = ITEMS.register("pink_boots",
             () -> new ArmorItem(ModArmorMaterial.PINK, EquipmentSlot.FEET, new Item.Properties()));
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
 

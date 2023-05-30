@@ -1,6 +1,6 @@
 package com.leisure.miniuav.utils;
 
-import com.leisure.miniuav.item.ItemRegister;
+import com.leisure.miniuav.init.ItemInit;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
@@ -13,7 +13,7 @@ import java.util.function.Supplier;
  */
 public enum ModItemTier implements Tier {
     PINK(3, 3000, 10.0F, 5.0F, 5, () -> {
-        return Ingredient.of(ItemRegister.LEI.get());
+        return Ingredient.of(ItemInit.LEI.get());
     }),
     EXAMPLE(1, 1, 1.0F, 1.0F, 1, () -> {
         return Ingredient.of(Items.STICK);

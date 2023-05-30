@@ -1,11 +1,10 @@
 package com.leisure.miniuav;
 
-import com.leisure.miniuav.item.ItemRegister;
-import com.leisure.miniuav.block.BlockRegister;
+import com.leisure.miniuav.init.ItemInit;
+import com.leisure.miniuav.init.BlockInit;
+import com.leisure.miniuav.init.TileEntityInit;
 import com.leisure.miniuav.tab.ModTab;
 import com.leisure.miniuav.utils.Reference;
-import com.leisure.miniuav.world.feature.ModConfiguredFeatures;
-import com.leisure.miniuav.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,21 +21,20 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Reference.MOD_ID)
-public class MiniUav
-{
+public class MiniUav {
     private static final Logger LOGGER = LogUtils.getLogger();
 
 
-    public MiniUav()
-    {
+    public MiniUav() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setup);
 
-        ItemRegister.ITEMS.register(modEventBus);
-        BlockRegister.BLOCKS.register(modEventBus);
+        ItemInit.ITEMS.register(modEventBus);
+        BlockInit.BLOCKS.register(modEventBus);
+        TileEntityInit.TILE_ENTITY_TYPES.register(modEventBus);
 
         modEventBus.addListener(ModTab::registerTabs);
 
@@ -49,13 +47,11 @@ public class MiniUav
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
+    private void setup(final FMLCommonSetupEvent event) {
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
@@ -63,11 +59,9 @@ public class MiniUav
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
     }

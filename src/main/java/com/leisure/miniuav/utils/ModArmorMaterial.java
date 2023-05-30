@@ -1,6 +1,6 @@
 package com.leisure.miniuav.utils;
 
-import com.leisure.miniuav.item.ItemRegister;
+import com.leisure.miniuav.init.ItemInit;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
@@ -15,7 +15,7 @@ import java.util.function.Supplier;
  */
 public enum ModArmorMaterial implements ArmorMaterial {
     PINK(Reference.MOD_ID + ":pink", 20, new int[]{4, 7, 9, 4}, 50, SoundEvents.ARMOR_EQUIP_DIAMOND, 3.0F, 0.1F, () -> {
-        return Ingredient.of(ItemRegister.LEI.get());
+        return Ingredient.of(ItemInit.LEI.get());
     });
 
     //各部件的比值 靴子，腿甲，胸甲，头盔

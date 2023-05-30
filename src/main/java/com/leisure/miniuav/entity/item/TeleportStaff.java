@@ -24,6 +24,7 @@ public class TeleportStaff extends Item {
     public TeleportStaff(Properties properties) {
         super(properties);
     }
+
     //重写右键单击事件
     //示例写的是手持该物品右击 玩家向前闪现
     @Override
@@ -51,6 +52,7 @@ public class TeleportStaff extends Item {
     /**
      * 鼠标悬置事件
      * 示例为当鼠标悬置且摁住shift时显示提示信息
+     *
      * @param stack
      * @param worldIn
      * @param tooltip
@@ -59,7 +61,7 @@ public class TeleportStaff extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
 //        tooltip.add(Component.literal("teleports you where you're looking"));
-        if (KeyboardHelper.isHoldingShift()){
+        if (KeyboardHelper.isHoldingShift()) {
             tooltip.add(Component.literal("teleports you where you're looking"));
         }
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
@@ -93,6 +95,7 @@ public class TeleportStaff extends Item {
 
     /**
      * 重写getPlayerPOVHitResult方法 增加传送距离range
+     *
      * @param world
      * @param player
      * @param fluidMode
@@ -105,13 +108,13 @@ public class TeleportStaff extends Item {
         float f = player.getXRot();
         float f1 = player.getYRot();
         Vec3 vector3d = player.getEyePosition(1.0F);
-        float f2 = Mth.cos(-f1 * ((float)Math.PI / 180F) - (float)Math.PI);
-        float f3 = Mth.sin(-f1 * ((float)Math.PI / 180F) - (float)Math.PI);
-        float f4 = -Mth.cos(-f * ((float)Math.PI / 180F));
-        float f5 = Mth.sin(-f * ((float)Math.PI / 180F));
+        float f2 = Mth.cos(-f1 * ((float) Math.PI / 180F) - (float) Math.PI);
+        float f3 = Mth.sin(-f1 * ((float) Math.PI / 180F) - (float) Math.PI);
+        float f4 = -Mth.cos(-f * ((float) Math.PI / 180F));
+        float f5 = Mth.sin(-f * ((float) Math.PI / 180F));
         float f6 = f3 * f4;
         float f7 = f2 * f4;
-        Vec3 vector3d1 = vector3d.add((double)f6 * range, (double)f5 * range, (double)f7 * range);
+        Vec3 vector3d1 = vector3d.add((double) f6 * range, (double) f5 * range, (double) f7 * range);
         return world.clip(new ClipContext(vector3d, vector3d1, ClipContext.Block.OUTLINE, fluidMode, player));
     }
 }

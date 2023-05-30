@@ -39,6 +39,7 @@ public class SadBlock extends Block {
 
     /**
      * 反方向放置
+     *
      * @param context
      * @return
      */
@@ -50,11 +51,12 @@ public class SadBlock extends Block {
     /**
      * 右击事件 会触发两次 一次为副手一次为主手
      * 示例为当手持火药右击方块时，方块爆炸
+     *
      * @param state
      * @param world
      * @param pos
      * @param player
-     * @param hand    当前手 InteractionHand.MAIN_HAND  InteractionHand.*OFF_HAND*
+     * @param hand   当前手 InteractionHand.MAIN_HAND  InteractionHand.*OFF_HAND*
      * @param hit
      * @return
      */
@@ -62,7 +64,7 @@ public class SadBlock extends Block {
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack held = player.getItemInHand(hand);
 
-        if (!world.isClientSide() && held.getItem() == Items.GUNPOWDER){
+        if (!world.isClientSide() && held.getItem() == Items.GUNPOWDER) {
             //explode(@Nullable Entity p_255682_, double p_255803_, double p_256403_, double p_256538_, float p_255674_, boolean p_256634_, Level.ExplosionInteraction p_256111_)
             //p_255682_ 爆炸方法需要指定一个实体来为本次爆炸负责，以便描述死亡信息或其他用 实体也可以为null
             //p_255803_ p_256403_ p_256538_ 指定(x,y,z)爆炸坐标
@@ -86,6 +88,7 @@ public class SadBlock extends Block {
 
     /**
      * 该物品被爆炸摧毁时触发的事件
+     *
      * @param world
      * @param pos
      * @param explosion
@@ -99,11 +102,11 @@ public class SadBlock extends Block {
 
     /**
      * 是否可以种植指定作物
-     * @param state The Current state
-     * @param world The current level
      *
+     * @param state     The Current state
+     * @param world     The current level
      * @param pos
-     * @param facing The direction relative to the given position the plant wants to be, typically its UP
+     * @param facing    The direction relative to the given position the plant wants to be, typically its UP
      * @param plantable The plant that wants to check
      * @return
      */
@@ -111,7 +114,7 @@ public class SadBlock extends Block {
     public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction facing, IPlantable plantable) {
         Block plant = plantable.getPlant(world, pos.relative(facing)).getBlock();
 
-        if (plant == Blocks.CACTUS){
+        if (plant == Blocks.CACTUS) {
             //可以种仙人掌
             return true;
         } else {
@@ -122,6 +125,7 @@ public class SadBlock extends Block {
 
     /**
      * 接收时间变化 可以通过Block.Properties().randomTicks()代替
+     *
      * @param state
      * @return
      */
@@ -133,6 +137,7 @@ public class SadBlock extends Block {
     /**
      * 时间变化触发方法
      * 当时间变化时，如果上面一个方块是空气，将会替换为仙人掌
+     *
      * @param state
      * @param world
      * @param pos
@@ -141,7 +146,7 @@ public class SadBlock extends Block {
     @Override
     public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource rand) {
         BlockState above = world.getBlockState(pos.above());
-        if (above.isAir()){
+        if (above.isAir()) {
             world.setBlockAndUpdate(pos.above(), Blocks.CACTUS.defaultBlockState());
         }
     }

@@ -1,11 +1,12 @@
-package com.leisure.miniuav.block;
+package com.leisure.miniuav.init;
 
-import com.leisure.miniuav.item.ItemRegister;
+import com.leisure.miniuav.entity.blockentity.MobSlayerBlock;
 import com.leisure.miniuav.utils.Reference;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,7 +20,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 
-public class BlockRegister {
+public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 
     public static final RegistryObject<Block> ROCK_BLOCK = registerBlock("rock",
@@ -46,6 +47,10 @@ public class BlockRegister {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(7f).requiresCorrectToolForDrops()));
 
+    //方块实体示例 杀死周围的怪物
+    public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
+            () -> new MobSlayerBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
+
     //方块的几个注册方法
     //只注册方块
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<? extends T> block) {
@@ -56,10 +61,10 @@ public class BlockRegister {
 
     //注册BlockItem
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
-        return ItemRegister.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
 
