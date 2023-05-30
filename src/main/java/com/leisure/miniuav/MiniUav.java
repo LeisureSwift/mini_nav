@@ -1,5 +1,6 @@
 package com.leisure.miniuav;
 
+import com.leisure.miniuav.init.EnchantmentInit;
 import com.leisure.miniuav.init.ItemInit;
 import com.leisure.miniuav.init.BlockInit;
 import com.leisure.miniuav.init.TileEntityInit;
@@ -35,6 +36,7 @@ public class MiniUav {
         ItemInit.ITEMS.register(modEventBus);
         BlockInit.BLOCKS.register(modEventBus);
         TileEntityInit.TILE_ENTITY_TYPES.register(modEventBus);
+        EnchantmentInit.ENCHANTMENTS.register(modEventBus);
 
         modEventBus.addListener(ModTab::registerTabs);
 

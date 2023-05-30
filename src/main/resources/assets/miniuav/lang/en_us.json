@@ -2,5 +2,6 @@
   "itemGroup.miniuav": "UAV Items",
   "item.miniuav.lei": "Lei",
   "block.miniuav.rock": "Rock",
-  "block.miniuav.example_block": "Example Block"
+  "block.miniuav.example_block": "Example Block",
+  "enchantment.miniuav.bridge": "Bridging"
 }

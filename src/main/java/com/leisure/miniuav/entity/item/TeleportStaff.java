@@ -117,4 +117,9 @@ public class TeleportStaff extends Item {
         Vec3 vector3d1 = vector3d.add((double) f6 * range, (double) f5 * range, (double) f7 * range);
         return world.clip(new ClipContext(vector3d, vector3d1, ClipContext.Block.OUTLINE, fluidMode, player));
     }
+
+    @Override
+    public int getEnchantmentValue() {
+        return 10;
+    }
 }
