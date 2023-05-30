@@ -1,5 +1,6 @@
 package com.leisure.miniuav;
 
+import com.leisure.miniuav.events.AnvilHandler;
 import com.leisure.miniuav.init.EnchantmentInit;
 import com.leisure.miniuav.init.ItemInit;
 import com.leisure.miniuav.init.BlockInit;
@@ -7,8 +8,12 @@ import com.leisure.miniuav.init.TileEntityInit;
 import com.leisure.miniuav.tab.ModTab;
 import com.leisure.miniuav.utils.Reference;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -50,7 +55,8 @@ public class MiniUav {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-
+        AnvilHandler.initAnvilRecipes();
+        BrewingRecipeRegistry.addRecipe(Ingredient.of(Items.DIAMOND_AXE), Ingredient.of(ItemInit.LEI.get()), new ItemStack(Items.NETHERITE_AXE));
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

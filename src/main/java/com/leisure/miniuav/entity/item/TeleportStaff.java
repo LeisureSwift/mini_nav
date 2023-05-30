@@ -1,6 +1,7 @@
 package com.leisure.miniuav.entity.item;
 
 import com.leisure.miniuav.utils.KeyboardHelper;
+import com.leisure.miniuav.init.ItemInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -121,5 +122,15 @@ public class TeleportStaff extends Item {
     @Override
     public int getEnchantmentValue() {
         return 10;
+    }
+
+    @Override
+    public boolean isRepairable(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public boolean isValidRepairItem(ItemStack tool, ItemStack material) {
+        return material.getItem() == ItemInit.LEI.get();
     }
 }

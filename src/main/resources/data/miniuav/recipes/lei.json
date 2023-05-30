@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "miniuav:fruit"
+  },
+  "result": "miniuav:lei",
+  "experience": 1.0,
+  "cookingtime": 100
+}
