@@ -25,23 +25,29 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
+    //自定义树木
     public static final ResourceKey<ConfiguredFeature<?, ?>> EBONY_KEY = registerKey("ebony");
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_BLACK_OPAL_ORE_KEY = registerKey("black_opal_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> END_BLACK_OPAL_ORE_KEY = registerKey("end_black_opal_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_BLACK_OPEL_ORE_KEY = registerKey("nether_black_opel_ore");
-
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_FANTOM_ORE_KEY = registerKey("fantom_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_FANTOM_ORE_KEY = registerKey("nether_fantom_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> END_FANTOM_ORE_KEY = registerKey("end_fantom_ore");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+        //普通矿石
         RuleTest stoneReplaceAbles = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        //深层矿石
         RuleTest deepSlateReplaceAbles = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        //下界矿石
         RuleTest netherRackReplaceAbles = new BlockMatchTest(Blocks.NETHERRACK);
+        //末地矿石
         RuleTest endStoneReplaceAbles = new BlockMatchTest(Blocks.END_STONE);
 
-        List<OreConfiguration.TargetBlockState> overWorldBlackOpalOres = List.of(OreConfiguration.target(stoneReplaceAbles,
-                        BlockInit.FANTOM_ORE.get().defaultBlockState()),
+        //主世界
+        List<OreConfiguration.TargetBlockState> overWorldFantomOres = List.of(
+                OreConfiguration.target(stoneReplaceAbles, BlockInit.FANTOM_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepSlateReplaceAbles, BlockInit.DEEPSLATE_FANTOM_ORE.get().defaultBlockState()));
 
+        //注册树木生成逻辑
         register(context, EBONY_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(BlockInit.ROCK_BLOCK.get()),
                 new StraightTrunkPlacer(5, 6, 3),
@@ -49,10 +55,10 @@ public class ModConfiguredFeatures {
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
-        register(context, OVERWORLD_BLACK_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(overWorldBlackOpalOres, 9));
-        register(context, END_BLACK_OPAL_ORE_KEY, Feature.ORE, new OreConfiguration(endStoneReplaceAbles, BlockInit.ROCK_BLOCK.get().defaultBlockState(), 9));
-        register(context, NETHER_BLACK_OPEL_ORE_KEY, Feature.ORE, new OreConfiguration(netherRackReplaceAbles, BlockInit.ROCK_BLOCK.get().defaultBlockState(), 9));
-
+        //注册矿石生成逻辑
+        register(context, OVERWORLD_FANTOM_ORE_KEY, Feature.ORE, new OreConfiguration(overWorldFantomOres, 9));
+        register(context, NETHER_FANTOM_ORE_KEY, Feature.ORE, new OreConfiguration(netherRackReplaceAbles, BlockInit.NETHER_FANTOM_ORE.get().defaultBlockState(), 9));
+        register(context, END_FANTOM_ORE_KEY, Feature.ORE, new OreConfiguration(endStoneReplaceAbles, BlockInit.END_FANTOM_ORE.get().defaultBlockState(), 9));
     }
 
     //将这种矿石生成类型进行注册

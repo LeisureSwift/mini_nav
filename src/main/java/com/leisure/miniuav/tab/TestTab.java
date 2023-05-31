@@ -14,7 +14,12 @@ public class TestTab {
                 .displayItems((featureFlags, output, hasOp) -> {
                     output.accept(ItemInit.LEI.get());
                     output.accept(BlockInit.ROCK_BLOCK.get());
-//                    output.accept(BlockRegister.EXAMPLE_BLOCK.get());
+                    output.accept(BlockInit.EXAMPLE_METAL.get());
+                    output.accept(BlockInit.FANTOM_ORE.get());
+                    output.accept(BlockInit.DEEPSLATE_FANTOM_ORE.get());
+                    output.accept(BlockInit.NETHER_FANTOM_ORE.get());
+                    output.accept(BlockInit.END_FANTOM_ORE.get());
+                    output.accept(BlockInit.MOB_SLAYER.get());
                 }).build();
     }
 }

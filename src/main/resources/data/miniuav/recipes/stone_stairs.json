@@ -1,7 +1,7 @@
 {
     "type": "minecraft:stonecutting",
     "ingredient": {
-        "item": "firstmod:smile_block"
+        "item": "miniuav:lei"
     },
     "result": "minecraft:stone_stairs",
     "count": 2

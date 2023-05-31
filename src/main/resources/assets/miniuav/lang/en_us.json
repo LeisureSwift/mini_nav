@@ -1,7 +1,12 @@
 {
-  "itemGroup.miniuav": "UAV Items",
+  "itemGroup.miniuav.uav_tab": "UAV Items",
   "item.miniuav.lei": "Lei",
-  "block.miniuav.rock": "Rock",
-  "block.miniuav.example_block": "Example Block",
+  "block.miniuav.example_rock": "Example Rock",
+  "block.miniuav.example_metal": "Example Metal",
+  "block.miniuav.fantom_ore": "Fantom Ore",
+  "block.miniuav.deepslate_fantom_ore": "Deepslate Fantom Ore",
+  "block.miniuav.nether_fantom_ore": "Nether Fantom Ore",
+  "block.miniuav.end_fantom_ore": "End Fantom Ore",
+  "block.miniuav.mob_slayer": "Mob Slayer",
   "enchantment.miniuav.bridge": "Bridging"
 }

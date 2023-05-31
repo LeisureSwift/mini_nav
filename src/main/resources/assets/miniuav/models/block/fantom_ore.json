@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "miniuav:block/rock"
+    "all": "miniuav:block/fantom_ore"
   }
 }

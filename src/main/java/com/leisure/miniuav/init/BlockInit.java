@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Reference.MOD_ID);
 
-    public static final RegistryObject<Block> ROCK_BLOCK = registerBlock("rock",
+    public static final RegistryObject<Block> ROCK_BLOCK = registerBlock("example_rock",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
 
     //strength    影响破坏时间和抵抗爆炸的能力
@@ -33,22 +33,32 @@ public class BlockInit {
     //friction    摩檫力 如冰
     //speedFactor ？ 如灵魂沙
     //jumpFactor  跳跃系数 如蜂蜜
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = registerBlock("example_block",
+    public static final RegistryObject<Block> EXAMPLE_METAL = registerBlock("example_metal",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE).strength(5f, 6f)
                     .sound(SoundType.METAL).requiresCorrectToolForDrops().lightLevel((state) -> 15)));
 
-    //普通矿石，UniformInt.of(a,b)意思是该矿石挖掘后奖励多少经验，范围在[a,b]
+    //普通矿石示例，UniformInt.of(a,b)意思是该矿石挖掘后奖励多少经验，范围在[a,b]
     public static final RegistryObject<Block> FANTOM_ORE = registerBlock("fantom_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(3, 10)));
 
-    //深板岩矿石  1.19版本新增深板岩层矿石
+    //深板岩矿石示例  1.19版本新增深板岩层矿石
     public static final RegistryObject<Block> DEEPSLATE_FANTOM_ORE = registerBlock("deepslate_fantom_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(7f).requiresCorrectToolForDrops()));
 
+    //下界矿石示例
+    public static final RegistryObject<Block> NETHER_FANTOM_ORE = registerBlock("nether_fantom_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(7f).requiresCorrectToolForDrops()));
+
+    //末地矿石示例
+    public static final RegistryObject<Block> END_FANTOM_ORE = registerBlock("end_fantom_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(7f).requiresCorrectToolForDrops()));
+
     //方块实体示例 杀死周围的怪物
-    public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
+    public static final RegistryObject<Block> MOB_SLAYER = registerBlock("mob_slayer",
             () -> new MobSlayerBlock(Block.Properties.copy(Blocks.IRON_BLOCK)));
 
     //方块的几个注册方法

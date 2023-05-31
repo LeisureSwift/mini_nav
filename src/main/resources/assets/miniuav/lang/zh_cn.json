@@ -1,6 +1,12 @@
 {
-  "itemGroup.miniuav": "UAV 物品栏",
+  "itemGroup.miniuav.uav_tab": "UAV 物品栏",
   "item.miniuav.lei": "Lei物品",
-  "block.miniuav.rock": "Rock方块",
-  "block.miniuav.example_block": "示例方块"
+  "block.miniuav.example_rock": "示例岩石方块",
+  "block.miniuav.example_metal": "示例金属方块",
+  "block.miniuav.fantom_ore": "示例普通矿石",
+  "block.miniuav.deepslate_fantom_ore": "示例深层矿石",
+  "block.miniuav.nether_fantom_ore": "示例下界矿石",
+  "block.miniuav.end_fantom_ore": "示例末地矿石",
+  "block.miniuav.mob_slayer": "怪物杀手",
+  "enchantment.miniuav.bridge": "史莱姆桥"
 }

@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=east": {
-      "model": "miniuav:block/sad_block",
+      "model": "miniuav:block/mob_slayer",
       "y": 90
     },
     "facing=north": {
-      "model": "miniuav:block/sad_block"
+      "model": "miniuav:block/mob_slayer"
     },
     "facing=south": {
-      "model": "miniuav:block/sad_block",
+      "model": "miniuav:block/mob_slayer",
       "y": 180
     },
     "facing=west": {
-      "model": "miniuav:block/sad_block",
+      "model": "miniuav:block/mob_slayer",
       "y": 270
     }
   }

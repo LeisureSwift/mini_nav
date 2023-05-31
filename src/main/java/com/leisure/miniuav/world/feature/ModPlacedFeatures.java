@@ -18,23 +18,23 @@ import java.util.List;
 
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> EBONY_PLACES_KEY = createKey("ebony_placed");
-    public static final ResourceKey<PlacedFeature> BLACK_OPAL_PLACES_KEY = createKey("black_opal_ore");
-    public static final ResourceKey<PlacedFeature> END_BLACK_OPAL_PLACES_KEY = createKey("end_black_opal_ore");
-    public static final ResourceKey<PlacedFeature> NETHER_BLACK_OPEL_PLACES_KEY = createKey("nether_black_opel_ore");
+    public static final ResourceKey<PlacedFeature> FANTOM_PLACES_KEY = createKey("fantom_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_FANTOM_PLACES_KEY = createKey("nether_fantom_placed");
+    public static final ResourceKey<PlacedFeature> END_FANTOM_PLACES_KEY = createKey("end_fantom_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        //自定义树木生成
         register(context, EBONY_PLACES_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EBONY_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), BlockInit.ROCK_BLOCK.get()));
-
-        register(context, BLACK_OPAL_PLACES_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_BLACK_OPAL_ORE_KEY),
+        //自定义矿石生成
+        register(context, FANTOM_PLACES_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_FANTOM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(16, HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(80))));
-        register(context, NETHER_BLACK_OPEL_PLACES_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.NETHER_BLACK_OPEL_ORE_KEY),
+        register(context, NETHER_FANTOM_PLACES_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.NETHER_FANTOM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(80))));
-        register(context, END_BLACK_OPAL_PLACES_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_BLACK_OPAL_ORE_KEY),
+        register(context, END_FANTOM_PLACES_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.END_FANTOM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-64), VerticalAnchor.absolute(80))));
-
 
     }
 

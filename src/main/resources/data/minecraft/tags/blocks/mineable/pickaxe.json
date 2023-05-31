@@ -1,7 +1,11 @@
 {
   "replace": false,
   "values": [
-    "miniuav:example_block",
-    "miniuav:rock"
+    "miniuav:example_metal",
+    "miniuav:example_rock",
+    "miniuav:block/deepslate_fantom_ore",
+    "miniuav:block/end_fantom_ore",
+    "miniuav:block/fantom_ore",
+    "miniuav:block/nether_fantom_ore"
   ]
 }

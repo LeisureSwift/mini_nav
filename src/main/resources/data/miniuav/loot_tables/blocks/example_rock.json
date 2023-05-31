@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "miniuav:example_block"
+          "name": "miniuav:example_rock"
         }
       ]
     }
