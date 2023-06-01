@@ -9,6 +9,15 @@
           "name": "miniuav:end_fantom_ore"
         }
       ]
+    },
+    {
+      "rolls": 20.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "miniuav:lei"
+        }
+      ]
     }
   ]
 }

@@ -2,19 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
     "X": {
       "item": "miniuav:lei"
     }
   },
   "pattern": [
+    "X X",
     "XXX",
-    " # ",
-    " # "
+    "XXX"
   ],
   "result": {
-    "item": "miniuav:pink_pickaxe"
+    "item": "miniuav:pink_chestplate"
   }
 }

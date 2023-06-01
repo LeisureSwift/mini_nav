@@ -10,11 +10,11 @@
     }
   },
   "pattern": [
-    "XXX",
-    " # ",
-    " # "
+    "XX",
+    " #",
+    " #"
   ],
   "result": {
-    "item": "miniuav:pink_pickaxe"
+    "item": "miniuav:pink_hoe"
   }
 }

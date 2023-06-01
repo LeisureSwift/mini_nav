@@ -9,6 +9,15 @@
           "name": "miniuav:example_metal"
         }
       ]
+    },
+    {
+      "rolls": 20.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "miniuav:lei"
+        }
+      ]
     }
   ]
 }

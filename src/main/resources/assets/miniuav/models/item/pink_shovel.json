@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "miniuav:item/pink_pickaxe"
+    "layer0": "miniuav:item/pink_shovel"
   }
 }
